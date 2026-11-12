@@ -51,9 +51,9 @@ if [ "$KEEP_OLD" = false ]; then
     base=$(basename "$f" .ttf)
     # Only need to remove for timestamped builds (non-timestamped just overwrites)
     if [[ "$base" =~ -[0-9]{8}-[0-9]{6}- ]]; then
-      # e.g., LythMono-20260128-143052-Regular -> remove LythMono-*-Regular.ttf where * is YYYYMMDD-HHMMSS
-      base_clean=$(echo "$base" | sed -E 's/-[0-9]{8}-[0-9]{6}(-)/\1/')  # LythMono-Regular
-      prefix="${base_clean%%-*}"  # LythMono
+      # e.g., LythMonoCond-20260128-143052-Bold -> remove LythMonoCond-*-Bold.ttf where * is YYYYMMDD-HHMMSS
+      base_clean=$(echo "$base" | sed -E 's/-[0-9]{8}-[0-9]{6}(-)/\1/')  # LythMonoCond-Bold
+      prefix="${base_clean%%-*}"  # LythMonoCond
       suffix="${base_clean#*-}"   # Regular
       for old in "$FONT_DIR"/${prefix}-[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9]-${suffix}.ttf; do
         [ -f "$old" ] && echo -e "\033[37mrm $old\033[0m" && rm "$old"

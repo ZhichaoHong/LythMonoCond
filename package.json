@@ -1,5 +1,5 @@
 {
-  "name": "lyth-mono",
+  "name": "lyth-mono-cond",
   "type": "module",
   "scripts": {
     "postinstall": "cd Iosevka && npm i",

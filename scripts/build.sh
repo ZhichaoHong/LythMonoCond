@@ -15,7 +15,7 @@ for arg in "$@"; do
     --help|-h)
       echo "Usage: $0 [format | target...] [--ts] [--keep-old]"
       echo "  format     Build format for all plans (default: contents)"
-      echo "  target     Explicit format::plan targets (e.g., ttf::LythMono)"
+      echo "  target     Explicit format::plan targets (e.g., ttf::LythMonoCond)"
       echo "  --ts       Append timestamp to plan/family names"
       echo "  --keep-old Keep old timestamped builds in dist/ (only with --ts)"
       exit 0 ;;

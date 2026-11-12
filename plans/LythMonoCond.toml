@@ -1,4 +1,4 @@
-family = "Lyth Mono"
+family = "Lyth Mono Cond"
 spacing = "normal"
 serifs = "sans"
 noCvSs = true
@@ -127,10 +127,10 @@ menu = 700
 css = 700
 
 [widths.Normal]
-# With the metricOverride heights, I'm kinda sorta aiming at a slightly larger actual font size
-# (but not as large as going up half a step like 12 to 12.5 pt), so the width is also a bit larger,
-# which to me seems to balance it out a bit.
-shape = 604
+# 90% of upstream Lyth Mono's Normal width (604), for fitting more characters on a line.
+# Labelled as the standard width so names stay plain "Lyth Mono Cond" (no "Semi-Condensed"
+# suffix in legacy family names) since this is the only width the family ships.
+shape = 544
 menu = 5
 css = "normal"
 
@@ -181,7 +181,7 @@ smallArchDepth = 190
 
 [namingOverride]
 copyright = "Copyright 2015-2026, Renzhi Li (aka. Belleve Invis, belleve@typeof.net). Build configuration (c) 2026, Yuri Turov"
-description = "Lyth Mono is a custom build of Iosevka, a monospace font family for programming. http://github.com/why-trv/LythMono, http://be5invis.github.io/Iosevka"
+description = "Lyth Mono Cond is a SemiCondensed fork of Lyth Mono, a custom build of Iosevka, a monospace font family for programming. https://github.com/ZhichaoHong/LythMonoCond, http://github.com/why-trv/LythMono, http://be5invis.github.io/Iosevka"
 manufacturer = "Belleve Invis, Yuri Turov"
 designer = "Belleve Invis, Yuri Turov"
 version = "0.10.0"

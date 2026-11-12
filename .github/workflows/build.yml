@@ -1,4 +1,4 @@
-name: Build Lyth Mono
+name: Build Lyth Mono Cond
 
 on:
   push:
@@ -50,7 +50,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v6
         with:
-          name: lyth-mono
+          name: lyth-mono-cond
           path: dist/*/
           if-no-files-found: error
 
@@ -66,7 +66,7 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v7
         with:
-          name: lyth-mono
+          name: lyth-mono-cond
           path: fonts
 
       - name: Create ZIP archives

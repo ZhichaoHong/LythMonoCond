@@ -6,6 +6,8 @@
   </picture>
 </h1>
 
+> **Lyth Mono Cond** is a SemiCondensed fork of [Lyth Mono](https://github.com/why-trv/LythMono). It uses the same glyphs and vertical metrics, with a 90% character width. See [SemiCondensed](#semicondensed) for details. The rest of this README comes from upstream, with names and commands updated for this fork. Screenshots show upstream Lyth Mono at its Normal width.
+
 **Lyth Mono** is an attempt at my 'dream' programming font. Technically, it's a custom build of [Iosevka](https://github.com/be5invis/Iosevka) with metric overrides and an opinionated selection of glyphs.
 
 <img src="https://github.com/why-trv/LythMono/blob/assets/assets/lyth-mono.png?raw=true" alt="Lyth Mono sample" width="830"/>
@@ -42,6 +44,12 @@ And here's a screenshot of Lyth Mono in action in VS Code:
 
 Lyth Mono comes in `normal` (no postfix) and `term` (Term) versions. The latter has narrow arrows and geometric symbols for use in terminal emulators.
 
+### SemiCondensed
+
+This fork builds only the **SemiCondensed** width: 544 units, 90% of upstream Lyth Mono's Normal width (604). It fits more characters on a line. Glyph shapes and vertical metrics match upstream.
+
+The families are named `Lyth Mono Cond`, `Lyth Mono Cond Term`, `Lyth Mono Cond Square` and so on, so they install side by side with upstream Lyth Mono. Font files follow the plan names, e.g. `LythMonoCond-Regular.ttf`. The narrower width is baked into the family, so the fonts declare the standard width class and need no `font-stretch` setting.
+
 ### Square / Round
 
 In addition to the default configuration, there are extra Square and Round versions that modify the arc curvature to appear more 'squared' or 'rounded'. This is mostly apparent with characters like `o`, `c`, `e` etc. The difference is rather subtle and, since proportions are otherwise the same, may be more of a 'feel' than a 'look' thing.
@@ -53,13 +61,13 @@ In addition to the default configuration, there are extra Square and Round versi
 This repository provides both 'vanilla' and [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)–patched versions of the fonts.
 
 Caveats:
-- The patcher PascalCases the original font family names, e.g. `LythMonoTermRound Nerd Font` instead of `Lyth Mono Term Round`.
+- The patcher PascalCases the original font family names, e.g. `LythMonoCondTermRound Nerd Font` instead of `Lyth Mono Cond Term Round`.
 - The patcher messes with leading (line height) in some way, so you may need to adjust it in your terminal emulator.
 
 ## Installation
 
 1. Head over to [**Releases**](../../releases).
-2. Find the latest release and download the `.zip` file for the desired font variation, e.g. `LythMono.zip`.
+2. Find the latest release and download the `.zip` file for the desired font variation, e.g. `LythMonoCond.zip`.
 3. Unzip the archive and install the font files on your OS.
 
 ## Building
@@ -85,7 +93,7 @@ I guess you don't need `ttfautohint` if you're going to build only unhinted vers
 #### TL;DR
 
 ```
-git clone --recursive --shallow-submodules https://github.com/why-trv/LythMono.git
+git clone --recursive --shallow-submodules https://github.com/ZhichaoHong/LythMonoCond.git
 npm install
 npm run build
 ```
@@ -108,7 +116,7 @@ to automatically install TTFs to the user fonts directory.
 ##### 1. Clone this Repository
 
 ```
-git clone --recursive --shallow-submodules https://github.com/why-trv/LythMono.git
+git clone --recursive --shallow-submodules https://github.com/ZhichaoHong/LythMonoCond.git
 ```
 
 Iosevka's full git history is very heavy (tens of GB), so it's strongly recommended to do a shallow clone of the Iosevka submodule (`--shallow-submodules`).
@@ -132,7 +140,7 @@ npm run build [-- [format | target...] [--ts [--keep-old]]]
     - `webfont-unhinted`
     - `woff2` (WOFF2 only)
     - `woff2-unhinted`
-- `target...` - space-separated pairs of format and font build plan names, e.g. `contents::LythMono ttf::LythMonoTerm`.
+- `target...` - space-separated pairs of format and font build plan names, e.g. `contents::LythMonoCond ttf::LythMonoCondTerm`.
 
 Use the latter to specify specific fonts (build plans) to build. Otherwise, if only `format`, or neither `format` nor `target...` is specified, the script will build all plans in the `plans/` directory.
 
@@ -148,9 +156,9 @@ npm run build -- ttf --ts
 builds a timestamp-versioned TTF and deletes the previously existing timestamped versions of the font.
 
 ```
-npm run build -- contents::LythMono ttf::LythMonoTerm
+npm run build -- contents::LythMonoCond ttf::LythMonoCondTerm
 ```
-builds a normal (non-timestamp-versioned) `LythMono` in all formats and `LythMonoTerm` in hinted and unhinted TTF.
+builds a normal (non-timestamp-versioned) `LythMonoCond` in all formats and `LythMonoCondTerm` in hinted and unhinted TTF.
 
 ##### 4. Patch Nerd Fonts (Optional)
 
@@ -200,6 +208,6 @@ In general, please refer to Iosevka's [Customized Build](https://github.com/be5i
 However, keep in mind the differences between Lyth Mono and vanilla Iosevka build systems. In Lyth Mono:
 - Any single file in `plans/` defines one and only one build plan.
 - `buildPlan.<plan-name>` prefixes are omitted and the plan name is derived from the file name.
-- You should be able to use `inherits` keys of vanilla Iosevka where it allows, but this is somewhat limiting and verbose, so instead of defining the whole plan, you can define a base build plan (e.g. `basePlan = "LythMono"`) and the keys to override (see `LythMonoTerm.toml` for example).
+- You should be able to use `inherits` keys of vanilla Iosevka where it allows, but this is somewhat limiting and verbose, so instead of defining the whole plan, you can define a base build plan (e.g. `basePlan = "LythMonoCond"`) and the keys to override (see `LythMonoCondTerm.toml` for example).
 
 The build script processes and gathers all build plans in `Iosevka/private-build-plans.toml` and hands it off to Iosevka to build.

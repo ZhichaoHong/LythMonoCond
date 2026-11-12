@@ -1,0 +1,7 @@
+basePlan = "LythMonoCond"
+
+family = "Lyth Mono Cond Square"
+
+[metricOverride]
+archDepth = 163
+smallArchDepth = 168
