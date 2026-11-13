@@ -6,7 +6,7 @@
   </picture>
 </h1>
 
-> **Lyth Mono Cond** is a SemiCondensed fork of [Lyth Mono](https://github.com/why-trv/LythMono). It uses the same glyphs and vertical metrics, with a 90% character width. See [SemiCondensed](#semicondensed) for details. The rest of this README comes from upstream, with names and commands updated for this fork. Screenshots show upstream Lyth Mono at its Normal width.
+> **Lyth Mono Cond** is a condensed fork of [Lyth Mono](https://github.com/why-trv/LythMono). It uses the same glyph designs and vertical metrics, with a 500-unit character width (upstream: 604). See [Condensed Width](#condensed-width) for details. The rest of this README comes from upstream, with names and commands updated for this fork. Screenshots show upstream Lyth Mono at its Normal width.
 
 **Lyth Mono** is an attempt at my 'dream' programming font. Technically, it's a custom build of [Iosevka](https://github.com/be5invis/Iosevka) with metric overrides and an opinionated selection of glyphs.
 
@@ -44,9 +44,13 @@ And here's a screenshot of Lyth Mono in action in VS Code:
 
 Lyth Mono comes in `normal` (no postfix) and `term` (Term) versions. The latter has narrow arrows and geometric symbols for use in terminal emulators.
 
-### SemiCondensed
+### Condensed Width
 
-This fork builds only the **SemiCondensed** width: 544 units, 90% of upstream Lyth Mono's Normal width (604). It fits more characters on a line. Glyph shapes and vertical metrics match upstream.
+This fork builds a single narrow width: 500 units, the same as Iosevka and PragmataPro, against upstream Lyth Mono's 604. That fits about 21% more characters on a line. Vertical metrics match upstream.
+
+Two changes get there:
+- Letters are narrower: the body of `n` is 366 units against upstream's ~424, close to Iosevka's 372 and PragmataPro's 363.
+- Side bearings tighten from 90 to 67 units at Regular (78 to 58 at Bold), in line with Iosevka (64) and PragmataPro (68).
 
 The families are named `Lyth Mono Cond`, `Lyth Mono Cond Term`, `Lyth Mono Cond Square` and so on, so they install side by side with upstream Lyth Mono. Font files follow the plan names, e.g. `LythMonoCond-Regular.ttf`. The narrower width is baked into the family, so the fonts declare the standard width class and need no `font-stretch` setting.
 

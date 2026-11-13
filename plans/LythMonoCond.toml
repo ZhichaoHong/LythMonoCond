@@ -127,10 +127,11 @@ menu = 700
 css = 700
 
 [widths.Normal]
-# 90% of upstream Lyth Mono's Normal width (604), for fitting more characters on a line.
+# Matches Iosevka and PragmataPro (500) for ~21% more columns than upstream Lyth Mono (604).
+# Narrower letter bodies plus tighter side bearings (see `sb` below) get it there.
 # Labelled as the standard width so names stay plain "Lyth Mono Cond" (no "Semi-Condensed"
 # suffix in legacy family names) since this is the only width the family ships.
-shape = 544
+shape = 500
 menu = 5
 css = "normal"
 
@@ -150,7 +151,8 @@ css = "italic"
 xHeight = 540
 cap = 720
 ascender = 735
-sb = 'blend(weight, [400, 90], [700, 78])'
+# Upstream uses [400, 90], [700, 78]. Tightened to Iosevka / PragmataPro spacing (64-68).
+sb = 'blend(weight, [400, 67], [700, 58])'
 
 accentWidth = 200
 accentClearance = 80
@@ -184,4 +186,4 @@ copyright = "Copyright 2015-2026, Renzhi Li (aka. Belleve Invis, belleve@typeof.
 description = "Lyth Mono Cond is a SemiCondensed fork of Lyth Mono, a custom build of Iosevka, a monospace font family for programming. https://github.com/ZhichaoHong/LythMonoCond, http://github.com/why-trv/LythMono, http://be5invis.github.io/Iosevka"
 manufacturer = "Belleve Invis, Yuri Turov"
 designer = "Belleve Invis, Yuri Turov"
-version = "0.11.0"
+version = "0.12.0"
